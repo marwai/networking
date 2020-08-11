@@ -19,7 +19,7 @@ Implementing Scenario 2 with a NAT instance
 A two-tier architecture is a software architecture in which a presentation layer or interface runs on a client, and a data layer or data structure gets stored on a server. Separating these two components into different locations represents a two-tier architecture, as opposed to a single-tier architecture. Other kinds of multi-tier architectures add additional layers in distributed software design
 
 
-
+test
 
 3-Tier Infrastructure
 	1. Public Layer
