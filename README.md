@@ -55,3 +55,4 @@ Cloud service (AWS) there is Virtual Private Cloud (database servers and web ser
 -  2 tier architecture
 
  Within VPC we can allow for multiple IP addresses to connect, multiple users have 16IPv4 cidr block
+
