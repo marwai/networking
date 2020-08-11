@@ -81,7 +81,7 @@ allow all outbound traffic to public server (245.20.1.0/24)xc
 ingress 27017 from public server (245.20.1.0/24)
 ### Create NACL
 
-![1st gif](images/1st gif.gif)
+![1st gif](images/1st%20gif.gif)
 
 ### Create Instance
 1. Follow the gif to create the instance
