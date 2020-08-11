@@ -1,3 +1,27 @@
+Subnet is a subnet inside a network that makes traffic in the IP directs exactly where it needs to go
+
+Submasks - hides the IP addresss, allows different traffic to be picked up
+
+# Submask/Cidr block
+ Submask works at the end of the IP address
+	- Represents the submask as a block at the end of the an IP
+	- It represents by the submask by adding the bits
+IPV4 you can have a maximum of 32 bit, when adding the 8 bits inside the 4 octets
+
+# N-Tier Architecture
+	- Monliths
+
+## Monoliths
+	- Big, solid single point of failure because it is one big block
+	- Monolith architecture - describes an application that has everything working on the same server.
+	- Everything running on machine/server:
+		○ DB/Logic/Presentation
+
+### Example
+	- Database on top
+	- NodeJS running on server
+
+
 # Networking
 
 192.65.63.1
@@ -25,3 +49,9 @@ test
 	1. Public Layer
 	2. Application Layer
 Database Layer
+
+Cloud service (AWS) there is Virtual Private Cloud (database servers and web servers)
+ DB:
+-  2 tier architecture
+
+ Within VPC we can allow for multiple IP addresses to connect, multiple users have 16IPv4 cidr block
