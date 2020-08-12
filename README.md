@@ -134,27 +134,23 @@ AWS hosts a vpc where it creates two subnets (public and private)
 ## Ingress - inbound traffic 
 SSH for us and automation servers 
 Dev ports for us
-Internet ports for the world  
+Internet ports for the world   
+
+Public network: 
+- Allow port 80 
+- Allow port 443
+- Allow 22 on range of Ips
+- Allow ephemeral port on 0.0.0.0/0
 
 ## Egress - outbound traffic 
-Default 0.0.0.0/0
+Default 0.0.0.0/0  
+All ports 0.0.0.0/0   
 
-NACLs for the public 
-	- By default outbound traffic is denied
-	- Rules number matter 
-	- You can deny an IP as well as allow 
+## NACLs for the public 
+- By default outbound traffic is denied
+- Rules number matter 
+- You can deny an IP as well as allow 
 
-# Public 
-## Ingress 
-Allow port 80 
-Allow port 443
-Allow 22 on range of Ips
-Allow ephemeral port on 0.0.0.0/0
-
-## Egress 
-All ports 0.0.0.0/0 
-
-# Private
 
 ## Ingress
 27017 from 123.10.1.0/24
