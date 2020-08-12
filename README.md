@@ -1,12 +1,80 @@
-Subnet is a subnet inside a network that makes traffic in the IP directs exactly where it needs to go
+# Networking and Configuration Management
+# N-tier Architecture vs Monolith
+ 
+## __What is a network?__
+A network consists of two or more computers that are linked in order to share resources (such as printers and CDs), 
+exchange files, or allow electronic communications. The computers on a network may be linked through cables, telephone 
+lines, radio waves, satellites, or infrared light beams.
 
-Submasks - hides the IP addresss, allows different traffic to be picked up
+The common types of network includes:
+- Local Area Network (LAN)
+- Wide Area Network (WAN)
 
-# Submask/Cidr block
+## What is an IP?
+
+Stands for internet protocol, is the internet's principal set of rules for communications.
+IP is part of an internet protocol suite, which also includes Transmission Control Protocol (TCP)
+The IP governs rules for packetising, addressing, transmitting, routing and receiving data over networks
+
+## Maximum IP in IPV4?
+
+There is a finite amount of ip addresses, and ipv4 uses 32 bit IP addresses, and with 32 bits the maximum number of IP 
+addresses is 2^32. Or **4,294,967,266**. This may run out in our lifetime with more and more machines needing IP addresses therefore 
+
+To deal with the long-anticipated problem of IPv4 address exhaustion they invented IPV6. Now IPV6 has a 128 bit 
+architecture and can have a possible 2^128 ip addresses.
+
+## IPV4 VS IPV6 
+There are two types of IPs:
+
+     IPV4
+        * 4 bytes each (4 * 8 = 2^32)
+        * total range = 4.3 billion possible addresses
+        * 123.45.67.89
+    
+     IPV6
+        * 128 bits each (2^128)
+        * total range = 340 undecillion possible addresses
+        * **2001:db8::ff00:42:8329**
+
+# Subnet mask/Cidr block
 Submask works at the end of the IP address:    
 	- Represents the submask as a block at the end of the an IP    
 	- It represents by the submask by adding the bits     
 IPV4 you can have a maximum of 32 bit, when adding the 8 bits inside the 4 octets
+
+![submask](images/submask.PNG)
+
+
+__Class A__   
+- Uses 8 bit   
+- Most widespread 
+- First Octet between 0-127
+- Uses a default subnet mask of 255.0.0.0
+```
+2.134.213.2
+```
+
+Network use 24 bit 
+
+__Class B__  
+- Uses 16 Bit
+- Network uses 16 Bit
+- 128-191 as first octet
+- Uses a default subnet mask of 255.255.0.0
+```
+135.58.24.17
+```  
+
+__Class C__   
+- Most expensive - 24 bit address
+- IP and Network 
+- 192-223 as first octet 
+- Uses a default subnet mask of 255.255.255.0
+```
+192.168.178.1
+```  
+
 
 # N-Tier Architecture
 	- Monliths
@@ -48,36 +116,20 @@ Cloud service (AWS) there is Virtual Private Cloud (database servers and web ser
 
  Within VPC we can allow for multiple IP addresses to connect, multiple users have 16IPv4 cidr block
 
-Terminology to master:
-	- VPC - Virtual Private Cloud in AWS to launch computing resources
-	- IGW - internet gateway - attached to the VPC, allows internet into VPC via route table
-	- Subnet - Internal networking
+## Terminology to master:
+- ```VPC``` - Virtual Private Cloud in AWS to launch computing resources
+- ```IGW``` - internet gateway - attached to the VPC, allows internet into VPC via route table
+- ```Subnet``` - Internal networking
+- ```NACLs``` - Network Access Control list, this is an optional layer of security for your machine. (A firewall at the level of a subnet)
+- ```Route Tables``` - Contains a set of rules, called routes that determine where network traffic from a subnet or gateway is directed.
+- ```SG``` - Security Group / Firewall
+- ```EC2``` - Amazon Elastic Compute Cloud
 
 
-Interview*
+### Interview*
 AWS hosts a vpc where it creates two subnets (public and private)
 	- Public subnet connects to IGW and VPC via route table
 	- Private subnet connects to VPC via route table (private route)
-VPC 
-
-
-Public Subnet
-123.231.231.0/24
-
-Private Subnet
-123.231.231.2/24
- 
-Communicate  via route table
-
-Create our own VPC
-IP 123.231.231.1 / Cidr block  
-
-Objective: Deploy App 
-
-Region is a close cluster of datacentres
-Availability zones are logically connected but physically separated data centre 
-
-Make default __route private__ and new route that links the pubilc sub and the IGW and the VPC
 
 ## Ingress - inbound traffic 
 SSH for us and automation servers 
